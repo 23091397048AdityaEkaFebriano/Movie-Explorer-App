@@ -19,8 +19,12 @@
       "destination": "/movie-api/server.js"
     },
     {
+      "source": "/assets/(.*)",
+      "destination": "/movie-frontend/dist/assets/$1"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/movie-frontend/index.html"
+      "destination": "/movie-frontend/dist/index.html"
     }
   ]
 }
