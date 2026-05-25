@@ -13,7 +13,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/movies/${id}`);
+        const response = await axios.get(`/api/movies/${id}`);
         setMovie(response.data.data);
       } catch (error) {
         console.error('Error fetching movie:', error);
@@ -26,7 +26,7 @@ const MovieDetail = () => {
 
   const addToFavorites = async () => {
     try {
-      await axios.post('http://localhost:5000/api/favorites', { movie_id: movie.id });
+      await axios.post('/api/favorites', { movie_id: movie.id });
       alert('Added to favorites!');
     } catch (error) {
       alert(error.response?.data?.message || 'Error adding to favorites');

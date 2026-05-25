@@ -9,7 +9,7 @@ const Favorites = () => {
 
   const fetchFavorites = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/favorites');
+      const response = await axios.get('/api/favorites');
       setFavorites(response.data.data);
     } catch (error) {
       console.error('Error fetching favorites:', error);
@@ -24,7 +24,7 @@ const Favorites = () => {
 
   const removeFavorite = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/favorites/${id}`);
+      await axios.delete(`/api/favorites/${id}`);
       fetchFavorites();
     } catch (error) {
       alert('Error removing favorite');
